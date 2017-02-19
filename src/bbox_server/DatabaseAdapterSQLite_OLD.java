@@ -1,3 +1,4 @@
+package bbox_server;
 /*package databaseAdapter;
 
 import java.sql.*;

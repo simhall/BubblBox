@@ -5,4 +5,4 @@
  * @author simon.p.hall
  *
  */
-package databaseAdapter;
+package bbox_server;

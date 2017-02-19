@@ -10,7 +10,7 @@ import javax.swing.JDialog;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
-import databaseAdapter.Neo4jAdapter;
+import bbox_server.Neo4jAdapter;
 import shared.ConfigurationArtifacts.ConfigurationArtifact;
 
 import javax.swing.JLabel;

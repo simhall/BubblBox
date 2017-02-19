@@ -1,4 +1,4 @@
-package databaseAdapter;
+package bbox_server;
 
 import java.awt.List;
 import java.util.ArrayList;

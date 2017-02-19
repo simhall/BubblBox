@@ -20,11 +20,12 @@ import javax.swing.tree.DefaultTreeModel;
 import javax.swing.tree.TreeNode;
 import javax.swing.tree.TreePath;
 
+import bbox_server.Neo4jAdapter;
 import configurationValidator.ConfigurationValidator;
 import configurationValidator.ValidationConfirmationDialog;
 import configurationValidator.ValidationError;
 import configurationValidator.ValidationReportUI;
-import databaseAdapter.Neo4jAdapter;
+
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.UIManager.LookAndFeelInfo;
 

@@ -1,9 +1,9 @@
-package databaseAdapter;
+package bbox_server;
 
 import java.util.Date;
 
-public class Notification {
+public class Message {
 	public String Message;
-	public String Type;
+	public String Sender;
 	public Date Timestamp;
 }

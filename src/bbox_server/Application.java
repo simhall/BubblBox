@@ -1,4 +1,4 @@
-package databaseAdapter;
+package bbox_server;
 
 import java.awt.AWTException;
 import java.awt.Image;
@@ -17,6 +17,8 @@ import java.net.URISyntaxException;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+import shared.BBoxDBSQLLite;
+
 @SpringBootApplication
 public class Application {
 
@@ -25,8 +27,11 @@ public class Application {
 	static MenuItem menuItemLogs = new MenuItem("View Logs");
     static MenuItem menuItemExit = new MenuItem("Exit");
     static TrayIcon trayIcon = null;
+    public static BBoxDBSQLLite LogDB = null;
     
     public static void main(String[] args) {
+    	LogDB = new BBoxDBSQLLite(false);
+    	
         SpringApplication.run(Application.class, args);
         
         if (SystemTray.isSupported() && true) {
@@ -35,7 +40,7 @@ public class Application {
 		    // load an image
 		    
 		    
-		    Image image = Toolkit.getDefaultToolkit().getImage(Application.class.getClassLoader().getResource("bubbl_box_logo_small.png"));
+		    Image image = Toolkit.getDefaultToolkit().getImage(Application.class.getClassLoader().getResource("bubbl_box_logo_server_small.png"));
 		    // create a action listener to listen for default action executed on the tray icon
 		    
 		    ActionListener listenerFrontend = new ActionListener() {
@@ -72,7 +77,7 @@ public class Application {
 		    popup.add(menuItemExit);
 		    
 		    // construct a TrayIcon
-		    trayIcon = new TrayIcon(image, "BuBBl Box", popup);
+		    trayIcon = new TrayIcon(image, "BuBBl Box Server", popup);
 		    // set the TrayIcon properties
 		    //trayIcon.addActionListener(listenerExit);
 		    // ...
@@ -88,6 +93,5 @@ public class Application {
 		    // perform other actions
 		    
 		}
-        // Rabbit MQ listener + logic
     }
 }

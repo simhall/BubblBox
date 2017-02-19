@@ -1,4 +1,4 @@
-package databaseAdapter;
+package bbox_server;
 
 import static org.junit.Assert.*;
 

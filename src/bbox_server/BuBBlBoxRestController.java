@@ -1,4 +1,4 @@
-package databaseAdapter;
+package bbox_server;
 
 import java.util.*;
 import org.springframework.http.HttpStatus;
