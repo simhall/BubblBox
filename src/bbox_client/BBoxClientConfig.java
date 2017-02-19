@@ -18,6 +18,7 @@ public class BBoxClientConfig {
 	
 	public BBoxClientConfig()
 	{
+		
 		File f = new File(configurationFilePath);
 		if(f.exists() && !f.isDirectory()) { 
 			
@@ -30,7 +31,7 @@ public class BBoxClientConfig {
 				out.println("version=1.0");
 				out.println("showNotifications=true");
 				out.println("syncDelay=30");
-				out.println("apiBase=localhost");
+				out.println("apiBase=http://localhost:8080");
 				out.println("username=xxx");
 				out.println("password=xxx");
 			} catch (FileNotFoundException e) {
@@ -70,7 +71,7 @@ public class BBoxClientConfig {
 	
 	
 	public String getApiBase() throws IOException {
-		return getProperty("apibase");
+		return getProperty("apiBase");
 	}
 	
 	public String getUsername() throws IOException {

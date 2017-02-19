@@ -32,6 +32,7 @@
 	<properties>
 		<jackson.version>2.6.0</jackson.version>
 		<java.version>1.8</java.version>
+		<restlet-version>2.3.9</restlet-version>
 	</properties>
 	<repositories>
       <repository>
@@ -45,7 +46,12 @@
       <repository>
             <id>spring-releases</id>
             <url>https://repo.spring.io/libs-release</url>
-        </repository>
+      </repository>
+      <repository>
+      		<id>maven-restlet</id>
+        	<name>Restlet repository</name>
+        	<url>https://maven.restlet.com</url>
+      </repository>
    </repositories>
    <pluginRepositories>
         <pluginRepository>
@@ -53,7 +59,17 @@
             <url>https://repo.spring.io/libs-release</url>
         </pluginRepository>
     </pluginRepositories>
-	<dependencies>
+    <dependencies>
+    	<dependency>
+    		<groupId>org.restlet.jse</groupId>
+            <artifactId>org.restlet</artifactId>
+            <version>${restlet-version}</version>
+        </dependency>
+        <dependency>
+        	<groupId>org.restlet.jse</groupId>
+        	<artifactId>org.restlet.ext.jackson</artifactId>
+        	<version>${restlet-version}</version>
+        </dependency>
 		<dependency>
    			<groupId>javax.persistence</groupId>
    			<artifactId>persistence-api</artifactId>
@@ -80,7 +96,11 @@
 			<artifactId>httpclient</artifactId>
 			<version>4.3.4</version>
 		</dependency>
-
+		<dependency>
+    		<groupId>com.sun.jersey</groupId>
+    		<artifactId>jersey-client</artifactId>
+    		<version>1.19.3</version>
+		</dependency>
 		<dependency>
 			<groupId>org.slf4j</groupId>
 			<artifactId>slf4j-simple</artifactId>

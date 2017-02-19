@@ -31,7 +31,16 @@ public class BBoxClientApplication {
     public static void main(String[] args) {
     	
     	BBoxClientEngine.LogDB.Initialize();
+    	
     	BBoxClientEngine.LogDB.AddLogEntry(new LogEntry("info","Starting BuBBl Box client"));
+    	if(BBoxClientEngine.getInstance().ServerConnectionHealthy())
+    	{
+    		BBoxClientEngine.LogDB.AddLogEntry(new LogEntry("info","Server connection ok"));
+    	}
+    	else
+    	{
+    		BBoxClientEngine.LogDB.AddLogEntry(new LogEntry("error","Server connection failed"));
+    	}
 		if (SystemTray.isSupported() && true) {
 		    // get the SystemTray instance
 		    SystemTray tray = SystemTray.getSystemTray();

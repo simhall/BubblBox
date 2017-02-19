@@ -17,6 +17,11 @@ import shared.ConfigurationArtifacts.PreviousVersionArtifact;
 @RestController
 public class BuBBlBoxRestController {
 
+	@RequestMapping("/IsHealthy")
+    public ResponseEntity<String> IsHealthy () {
+		return new ResponseEntity<String>("true", HttpStatus.OK);
+	}
+
     @RequestMapping("/GetAllArtifacts")
     public ConfigurationArtifactList GetAllArtifacts () {
     	Collection<ConfigurationArtifact> artifacts = Neo4jAdapter.getInstance().getAllConfigurationArtifacts();
