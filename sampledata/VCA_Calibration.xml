@@ -1,0 +1,43 @@
+<Root schema_version="1.4">
+<ChannelSettings Enable="0" EnableStb="0" EnableAbObj="0" EnableMovObj="1" EnableCntLine="1" EnableSmokeFire="0" DetectionPoint="0" TrackMode="surv" MetadataFormat="631" RetrigTime="5" MeasurementUnits="1" StatHoldonTime="50" MinObjectArea="10" AlarmDwell="2000" FadeoutDwell="1000" TotalLicenses="0"></ChannelSettings>
+<LicenseSettings TotalLicenses="0"></LicenseSettings>
+<ZoneSettings TotalZones="1">
+<Zone Id="0" Name="Zone 0" Type="3" Style="2" Color="16711680" Display="0" Enable="1" TotalPoints="7">
+<Point X="29454" Y="43159"></Point>
+<Point X="43230" Y="31120"></Point>
+<Point X="56285" Y="33960"></Point>
+<Point X="65535" Y="37708"></Point>
+<Point X="65469" Y="65194"></Point>
+<Point X="14432" Y="65535"></Point>
+<Point X="29454" Y="43159"></Point>
+</Zone>
+</ZoneSettings>
+<EventSettings TotalEvents="0"></EventSettings>
+<CounterSettings TotalCounters="0"></CounterSettings>
+<CalibrationSettings Mode="3" TiltAngle="9.150000" RollAngle="0.000000" PanAngle="2.000000" CamHeight="3.000000" FOV="22.000000"></CalibrationSettings>
+<ClassificationSettings TotalClassifications="3">
+<Classification Id="0" Name="Person" Enable="1" Position="0">
+<Area LowerThreshold="5.000000" UpperThreshold="20.000000"></Area>
+<Speed LowerThreshold="0.000000" UpperThreshold="20.000000"></Speed>
+</Classification>
+<Classification Id="1" Name="Clutter" Enable="1" Position="1">
+<Area LowerThreshold="0.000000" UpperThreshold="4.000000"></Area>
+<Speed LowerThreshold="0.000000" UpperThreshold="50.000000"></Speed>
+</Classification>
+<Classification Id="2" Name="Group of People" Enable="1" Position="2">
+<Area LowerThreshold="30.000000" UpperThreshold="39.000000"></Area>
+<Speed LowerThreshold="0.000000" UpperThreshold="20.000000"></Speed>
+</Classification>
+</ClassificationSettings>
+<BIASettings TotalBIASteams="4" Enable="0">
+<BIAStream Id="0" Name="first stream" Enable="0" DrawingFlags="268435714" AlarmObjectColor="14696512" NonAlarmObjectColor="16776960" ObjectTextSize="0" CounterTextSize="0" SystemTextSize="1"></BIAStream>
+<BIAStream Id="1" Name="second stream" Enable="0" DrawingFlags="268435714" AlarmObjectColor="14696512" NonAlarmObjectColor="16776960" ObjectTextSize="0" CounterTextSize="0" SystemTextSize="1"></BIAStream>
+<BIAStream Id="2" Name="snapshot" Enable="0" DrawingFlags="268435714" AlarmObjectColor="14696512" NonAlarmObjectColor="16776960" ObjectTextSize="0" CounterTextSize="0" SystemTextSize="1"></BIAStream>
+<BIAStream Id="3" Name="analogue output" Enable="0" DrawingFlags="268435714" AlarmObjectColor="14696512" NonAlarmObjectColor="16776960" ObjectTextSize="0" CounterTextSize="0" SystemTextSize="1"></BIAStream>
+</BIASettings>
+<TamperDetectionSettings Enable="0" AlarmTimeout="20" FiredAreaThreshold="40" LowLightEnable="0"></TamperDetectionSettings>
+<PTZTrackingSettings Enable="0" HomePreset="1" HomeTrackingOnly="0" Return2Home="0" Return2HomeTimeout="30">
+<AutoTracking Enable="0" Profile="N/A" MaxTrackingTime="60" HoldonTime="5" ManualOverride="1" ManualOverrideTimeout="30" TriggerbyRule="0"></AutoTracking>
+</PTZTrackingSettings>
+<SceneChangeDetectionSettings Mode="1" AlarmTimeout="1" FiredAreaThreshold="50"></SceneChangeDetectionSettings>
+</Root>
