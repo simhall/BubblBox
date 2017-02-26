@@ -2,7 +2,6 @@ package bbox_server;
 
 import java.awt.AWTException;
 import java.awt.Image;
-import java.awt.Menu;
 import java.awt.MenuItem;
 import java.awt.PopupMenu;
 import java.awt.SystemTray;

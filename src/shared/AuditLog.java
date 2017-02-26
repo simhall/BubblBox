@@ -1,7 +1,6 @@
 package shared;
 
 import java.io.Serializable;
-import java.util.Comparator;
 import java.util.Date;
 
 import org.neo4j.ogm.annotation.GraphId;

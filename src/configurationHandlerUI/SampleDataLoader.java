@@ -2,11 +2,8 @@ package configurationHandlerUI;
 
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.net.URI;
-import java.net.URISyntaxException;
 import java.util.ArrayList;
 import java.util.Collection;
-import java.util.List;
 import java.util.Scanner;
 
 import shared.ComparisonOperator;

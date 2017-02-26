@@ -8,18 +8,12 @@ import java.util.Collection;
 import javax.swing.*;
 import javax.swing.table.*;
 
-import org.openide.actions.ToolsAction.Model;
-
 import shared.ComparisonHelper;
 import shared.ComparisonOperator;
 import shared.ContentSpecificationType;
 import shared.ContentSpecificationTypeHelper;
 import shared.ConfigurationArtifacts.ConfigurationArtifact;
 import shared.ConfigurationArtifacts.ContentSpecification;
-
-import java.awt.FlowLayout;
-import java.awt.BorderLayout;
-import java.awt.GridLayout;
 
 public class ContentSpecificationPanel extends JComponent {
 

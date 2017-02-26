@@ -1,7 +1,5 @@
 package configurationHandlerUI;
 
-import static org.junit.Assert.fail;
-
 import java.awt.BorderLayout;
 import java.awt.FlowLayout;
 
@@ -14,17 +12,12 @@ import bbox_server.Neo4jAdapter;
 import shared.ConfigurationArtifacts.ConfigurationArtifact;
 
 import javax.swing.JLabel;
-import javax.swing.BoxLayout;
 import javax.swing.JTextField;
-import javax.swing.JList;
 import javax.swing.JOptionPane;
-import javax.swing.JSpinner;
 import java.awt.List;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import java.awt.event.ActionEvent;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
 
 public class JOptionPaneCreateDependency extends JDialog {
 

@@ -8,11 +8,9 @@ import javax.swing.JDialog;
 import javax.swing.JFileChooser;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
-import java.awt.GridLayout;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
-import javax.swing.DropMode;
 import javax.swing.JComboBox;
 import javax.swing.DefaultComboBoxModel;
 import shared.Environment;
@@ -20,10 +18,7 @@ import shared.ConfigurationArtifacts.ArtifactType;
 import shared.ConfigurationArtifacts.ConfigurationArtifact;
 import java.awt.event.ActionListener;
 import java.io.File;
-import java.io.FileInputStream;
 import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.InputStream;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.Scanner;
@@ -31,11 +26,9 @@ import java.awt.event.ActionEvent;
 import java.awt.GridBagLayout;
 import java.awt.GridBagConstraints;
 import java.awt.Insets;
-import net.miginfocom.swing.MigLayout;
 import javax.swing.BoxLayout;
 import javax.swing.JTextArea;
 import javax.swing.JScrollPane;
-import javax.swing.JTextPane;
 
 public class JOptionPaneCreateArtifact extends JDialog {
 

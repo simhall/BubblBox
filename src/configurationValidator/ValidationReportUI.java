@@ -7,7 +7,6 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.filechooser.FileNameExtensionFilter;
-import org.apache.commons.io.FilenameUtils;
 
 import bbox_server.Neo4jAdapter;
 import shared.JTableExcelExporter;
@@ -136,12 +135,12 @@ public class ValidationReportUI extends JFrame {
 	 */
 	private File addFileExtIfNecessary(File file,String ext) {
 		ext = ext.replace(".", "");
-		if (FilenameUtils.getExtension(file.getName()).equalsIgnoreCase(ext)) {
+		/*if (FilenameUtils.getExtension(file.getName()).equalsIgnoreCase(ext)) {
 		    // filename is OK as-is
 		} else {
 		    file = new File(file.toString() + "." + ext);  // append .ext if "foo.jpg.ext" is OK
 		    //file = new File(file.getParentFile(), FilenameUtils.getBaseName(file.getName()) + "." + ext); // ALTERNATIVELY: remove the extension (if any) and replace it with ".xml"
-		}
+		}*/
 		return file;
 	}
 }

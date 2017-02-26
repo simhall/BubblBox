@@ -104,6 +104,7 @@ public class CompletenessValidator {
 			String jsonData = artifact.getArtifactDataText();
 			try
 			{
+				@SuppressWarnings("unused")
 				JSONObject jsonObject = new JSONObject(jsonData);
 				errors.add(new ValidationError(
 						ValidationErrorType.INTEGRITY,

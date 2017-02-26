@@ -1,11 +1,10 @@
 package bbox_server;
 
-import java.awt.List;
 import java.util.ArrayList;
 import java.util.Collection;
 
 import org.neo4j.ogm.session.Session;
-import org.neo4j.ogm.session.transaction.Transaction;
+import org.neo4j.ogm.transaction.Transaction;
 
 import shared.AuditLog;
 import shared.Neo4jSessionFactory;

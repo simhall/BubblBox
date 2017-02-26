@@ -65,9 +65,8 @@ public class BBoxClientEngine {
 
 	public Boolean Sync()
 	{
-
 		// Download new artifacts
-
+		GetArtifacts();
 		// See if there are updates in existing artifacts
 
 		return false;
@@ -76,5 +75,37 @@ public class BBoxClientEngine {
 	public Boolean AddArtifact()
 	{
 		return false;
-	}	
+	}
+	
+	public void GetArtifacts()
+	{
+		try {
+			String restURL = Config.getApiBase() + "/GetAllArtifacts";
+			System.out.println("Calling: " + restURL);
+			ClientResource resource = new ClientResource(restURL);
+
+			Representation response = resource.get();
+			String responseText = response.getText();
+			if (responseText == null || responseText.equals("")) {
+				System.out.println("Success! " + responseText);
+					
+				if(responseText.contains("true"))
+				{
+					//return true;
+				}
+				else
+				{
+					//return false;
+				}
+
+			} else {
+				System.out.println(responseText);
+				//return false;
+			}
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			//return false;
+		}
+	}
 }
