@@ -3,11 +3,17 @@ package bbox_client;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Iterator;
+import java.util.List;
 
+import org.json.JSONArray;
+import org.json.JSONObject;
 import org.restlet.Response;
 import org.restlet.data.Form;
 import org.restlet.representation.Representation;
 import org.restlet.resource.ClientResource;
+
+import com.fasterxml.jackson.databind.ObjectMapper;
 
 import shared.BBoxDBSQLLite;
 import shared.ConfigurationArtifacts.ConfigurationArtifact;
@@ -40,7 +46,7 @@ public class BBoxClientEngine {
 
 			Representation response = resource.get();
 			String responseText = response.getText();
-			if (responseText == null || responseText.equals("")) {
+			if (responseText != null && !responseText.equals("")) {
 				System.out.println("Success! " + responseText);
 					
 				if(responseText.contains("true"))
@@ -77,8 +83,9 @@ public class BBoxClientEngine {
 		return false;
 	}
 	
-	public void GetArtifacts()
+	public List<ConfigurationArtifact> GetArtifacts()
 	{
+		List<ConfigurationArtifact> ret = new ArrayList<ConfigurationArtifact>();
 		try {
 			String restURL = Config.getApiBase() + "/GetAllArtifacts";
 			System.out.println("Calling: " + restURL);
@@ -86,26 +93,25 @@ public class BBoxClientEngine {
 
 			Representation response = resource.get();
 			String responseText = response.getText();
-			if (responseText == null || responseText.equals("")) {
-				System.out.println("Success! " + responseText);
-					
-				if(responseText.contains("true"))
+			
+			if (responseText != null && !responseText.equals("")) {
+				JSONObject jsonObject = new JSONObject(responseText);
+				String artifactText = jsonObject.get("greetings").toString();
+				ObjectMapper mapper = new ObjectMapper();
+				ConfigurationArtifact[] artifacts = mapper.readValue(artifactText, ConfigurationArtifact[].class);
+				for(ConfigurationArtifact artifact : artifacts)
 				{
-					//return true;
+					ret.add(artifact);
 				}
-				else
-				{
-					//return false;
-				}
-
+				return ret;
 			} else {
 				System.out.println(responseText);
-				//return false;
+				return null;
 			}
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-			//return false;
+			return null;
 		}
 	}
 }
