@@ -1,16 +1,13 @@
 {
-  "name": "startbootstrap-sb-admin-2",
+  "name": "BuBBlBox",
   "version": "1.0.7",
-  "homepage": "http://startbootstrap.com/template-overviews/sb-admin-2/",
-  "authors": [
-    "David Miller"
-  ],
-  "description": "A free, open source, Bootstrap admin theme created by Start Bootstrap",
+  "homepage": "bubblbox.com",
+  "description": "BuBBlBox, a tool for configuration file management",
   "keywords": [
     "bootstrap",
     "theme"
   ],
-  "license": "Apache",
+  "license": "GPL3.0",
   "ignore": [
     "**/.*",
     "node_modules",
@@ -37,5 +34,6 @@
     "datatables-responsive": "~1.0.3",
     "bootstrap-social": "~4.8.0",
     "flot.tooltip": "~0.8.4"
-  }
+  },
+  "private": true
 }
