@@ -1,222 +1,155 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-<script src="../bower_components/angular/angular.min.js"></script>
-    <link rel="stylesheet"; href="../node_modules/ng-table/bundles/ng-table.min.css">
-    <script src="../node_modules/ng-table/bundles/ng-table.min.js"></script>
-    
-    <script src="../angular/myApp.js"></script>
-    <script src="../angular/MenuController.js"></script>
-    <script src="../angular/backupArtifactController.js"></script>
-    
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
+    <head>
+        <base href="/pages/" />
+        <script src="../bower_components/angular/angular.min.js"></script>
+        <link rel="stylesheet"; href="../node_modules/ng-table/bundles/ng-table.min.css">
+        <script src="../node_modules/ng-table/bundles/ng-table.min.js"></script>
 
-    <title>BuBBl Box</title>
+        <script src="../angular/myApp.js"></script>
+        <script src="../angular/MenuController.js"></script>
+        <script src="../angular/backupArtifactController.js"></script>
 
-    <!-- Bootstrap Core CSS -->
-    <link href="../bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="">
+        <meta name="author" content="">
 
-    <!-- MetisMenu CSS -->
-    <link href="../bower_components/metisMenu/dist/metisMenu.min.css" rel="stylesheet">
+        <title>BuBBl Box</title>
 
-    <!-- Timeline CSS -->
-    <link href="../dist/css/timeline.css" rel="stylesheet">
+        <!-- Bootstrap Core CSS -->
+        <link href="../bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
 
-    <!-- Custom CSS -->
-    <link href="../dist/css/sb-admin-2.css" rel="stylesheet">
+        <!-- MetisMenu CSS -->
+        <link href="../bower_components/metisMenu/dist/metisMenu.min.css" rel="stylesheet">
 
-    <!-- Morris Charts CSS -->
-    <link href="../bower_components/morrisjs/morris.css" rel="stylesheet">
+        <!-- Timeline CSS -->
+        <link href="../dist/css/timeline.css" rel="stylesheet">
 
-    <!-- Custom Fonts -->
-    <link href="../bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+        <!-- Custom CSS -->
+        <link href="../dist/css/sb-admin-2.css" rel="stylesheet">
 
-    <!-- jQuery -->
-    <script src="../bower_components/jquery/dist/jquery.min.js"></script>
+        <!-- Morris Charts CSS -->
+        <link href="../bower_components/morrisjs/morris.css" rel="stylesheet">
 
-    <!-- Bootstrap Core JavaScript -->
-    <script src="../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+        <!-- Custom Fonts -->
+        <link href="../bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
-    <!-- Metis Menu Plugin JavaScript -->
-    <script src="../bower_components/metisMenu/dist/metisMenu.min.js"></script>
+        <!-- jQuery -->
+        <script src="../bower_components/jquery/dist/jquery.min.js"></script>
 
-    <!-- Morris Charts JavaScript -->
-    <script src="../bower_components/raphael/raphael-min.js"></script>
-    <script src="../bower_components/morrisjs/morris.min.js"></script>
-    <script src="../angular/BuBBlBoxRestController.js"></script>
-        
-    <!-- Custom Theme JavaScript -->
-    <script src="../dist/js/sb-admin-2.js"></script>
+        <!-- Bootstrap Core JavaScript -->
+        <script src="../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 
-</head>
+        <!-- Metis Menu Plugin JavaScript -->
+        <script src="../bower_components/metisMenu/dist/metisMenu.min.js"></script>
 
-<body>
-    <div ng-app="myApp" ng-controller="restCtrl"> 
-    <div id="wrapper">
+        <!-- Morris Charts JavaScript -->
+        <script src="../bower_components/raphael/raphael-min.js"></script>
+        <script src="../bower_components/morrisjs/morris.min.js"></script>
+        <script src="../angular/BuBBlBoxRestController.js"></script>
 
-        <!-- Navigation -->
-        <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="index.html">BuBBl Box Configuration File Management Tool</a>
-            </div>
-            <!-- /.navbar-header -->
+        <!-- Custom Theme JavaScript -->
+        <script src="../dist/js/sb-admin-2.js"></script>
 
-            <ul class="nav navbar-top-links navbar-right" ng-controller="MenuController">
-                <li class="dropdown">
-                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                        <i class="fa fa-envelope fa-fw"></i>  <i class="fa fa-caret-down"></i>
-                    </a>
-                    <ul class="dropdown-menu dropdown-messages">
-                        <li ng-repeat="x in myMessages">
-                            <a href="#">
-                                <div>
-                                    <strong>{{x.Sender}}</strong>
-                                    <span class="pull-right text-muted">
-                                        <em>Yesterday</em>
-                                    </span>
-                                </div>
-                                <div>{{x.Message}}</div>
-                            </a>
-                        </li>
-                        <li class="divider"></li>
-                        <li>
-                            <a class="text-center" href="#">
-                                <strong>Read All Messages</strong>
-                                <i class="fa fa-angle-right"></i>
-                            </a>
-                        </li>
-                    </ul>
-                    <!-- /.dropdown-messages -->
-                </li>
-                
-                <!-- /.dropdown -->
-                <li class="dropdown">
-                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                        <i class="fa fa-bell fa-fw"></i>  <i class="fa fa-caret-down"></i>
-                    </a>
-                    <ul class="dropdown-menu dropdown-alerts">
-                        <li ng-repeat="x in myNotifications">
-                            <a href="#">
-                                <div>
-                                    <i class="fa fa-upload fa-fw"></i> {{x.Message}}
-                                    <span class="pull-right text-muted small">4 minutes ago</span>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="divider"></li>
-                        <li>
-                            <a class="text-center" href="#">
-                                <strong>See All Alerts</strong>
-                                <i class="fa fa-angle-right"></i>
-                            </a>
-                        </li>
-                    </ul>
-                    <!-- /.dropdown-alerts -->
-                </li>
-                <!-- /.dropdown -->
-                <li class="dropdown">
-                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                        <i class="fa fa-user fa-fw"></i>  <i class="fa fa-caret-down"></i>
-                    </a>
-                    <ul class="dropdown-menu dropdown-user">
-                        <li><a href="#"><i class="fa fa-user fa-fw"></i> User Profile</a>
-                        </li>
-                        <li><a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a>
-                        </li>
-                        <li class="divider"></li>
-                        <li><a href="login.html"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
-                        </li>
-                    </ul>
-                    <!-- /.dropdown-user -->
-                </li>
-                <!-- /.dropdown -->
-            </ul>
-            <!-- /.navbar-top-links -->
-            
-            <div class="navbar-default sidebar" role="navigation" ng-controller="MenuController">
-                <div class="sidebar-nav navbar-collapse">
-                    <ul class="nav" id="side-menu">
-                        <li class="sidebar-search">
-                            <div class="input-group custom-search-form">
-                                <input type="text" class="form-control" placeholder="Search...">
-                                <span class="input-group-btn">
-                                <button class="btn btn-default" type="button">
-                                    <i class="fa fa-search"></i>
-                                </button>
-                            </span>
-                            </div>
-                            <!-- /input-group -->
-                        </li>
-                        <li ng-repeat="x in leftMenu">
-                            <a href="{{x.link}}"><i class="{{x.style}}"></i> {{x.text}}</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            <!-- /.navbar-static-side -->
-        </nav>
+    </head>
 
-        <div id="page-wrapper">
-            <div class="row">
-                <div class="col-lg-12">
-                    <h1 class="page-header">Backup</h1>
-                </div>
-                <!-- /.col-lg-12 -->
-            </div>
-            <!-- /.row -->
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-                            Configuration Artifacts - Previous Versions
-                        </div>
-                        <!-- /.panel-heading -->
-                        <div class="panel-body">
-                            <div class="dataTable_wrapper" ng-controller="backupArtifactController">
-                                <table ng-table="tableParams" class="table" show-filter="true">
-                                    <tr ng-repeat="x in previousArtifacts" ng-click="go(x)">
-                                        <td title="'Name'" filter="{ name: 'artifactName'}" sortable="'artifactName'">
-                                            {{x.artifactName}}</td>
-                                        <td title="'Type'" filter="{ name: 'artifactType'}" sortable="'artifactType'">
-                                            {{x.artifactType}}</td>
-                                        <td title="'Source Component'" filter="{ name: 'sourceComponentName'}" sortable="'sourceComponentName'">
-                                            {{x.sourceComponentName}}</td>
-                                        <td title="'Environment'" filter="{ name: 'environment'}" sortable="'environment'">
-                                            {{x.environment}}</td>
-                                        <td title="'Artifact ID'" filter="{ name: 'artifactID'}" sortable="'artifactID'">
-                                            {{x.artifactID}}</td>
-                                    </tr>
-                                </table>
-                            </div>
-                        </div>
-                        <!-- /.panel-body -->
+    <body>
+        <div ng-app="myApp" ng-controller="restCtrl"> 
+            <div id="wrapper">
+
+                <!-- Navigation -->
+                <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand" href="index.html">BuBBl Box Configuration File Management Tool</a>
                     </div>
-                    <!-- /.panel -->
-                </div>
-                <!-- /.col-lg-12 -->
-            </div>
-            <!-- /.row -->
-        </div>
-        <!-- /#page-wrapper -->
+                    <!-- /.navbar-header -->
 
-    </div>
-    <!-- /#wrapper -->
-    </div>
-    
-    
-</body>
-    
+                    <div class="nav navbar-top-links navbar-right" ng-controller="MenuController">
+                        <ng-include src="'template_topmenu.html'"></ng-include>
+                    </div>
+
+                    <div class="navbar-default sidebar" role="navigation" ng-controller="MenuController">
+                        <div class="sidebar-nav navbar-collapse">
+                            <ul class="nav" id="side-menu">
+                                <li class="sidebar-search">
+                                    <div class="input-group custom-search-form">
+                                        <input type="text" class="form-control" placeholder="Search...">
+                                        <span class="input-group-btn">
+                                            <button class="btn btn-default" type="button">
+                                                <i class="fa fa-search"></i>
+                                            </button>
+                                        </span>
+                                    </div>
+                                    <!-- /input-group -->
+                                </li>
+                                <li ng-repeat="x in leftMenu">
+                                    <a href="{{x.link}}"><i class="{{x.style}}"></i> {{x.text}}</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- /.navbar-static-side -->
+                </nav>
+
+                <div id="page-wrapper">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <h1 class="page-header">Backup</h1>
+                        </div>
+                        <!-- /.col-lg-12 -->
+                    </div>
+                    <!-- /.row -->
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    Configuration Artifacts - Previous Versions
+                                </div>
+                                <!-- /.panel-heading -->
+                                <div class="panel-body">
+                                    <div class="dataTable_wrapper" ng-controller="backupArtifactController">
+                                        <table ng-table="tableParams" class="table" show-filter="true">
+                                            <tr ng-repeat="x in previousArtifacts" ng-click="go(x)">
+                                                <td title="'Name'" filter="{ name: 'artifactName'}" sortable="'artifactName'">
+                                                    {{x.artifactName}}</td>
+                                                <td title="'Type'" filter="{ name: 'artifactType'}" sortable="'artifactType'">
+                                                    {{x.artifactType}}</td>
+                                                <td title="'Source Component'" filter="{ name: 'sourceComponentName'}" sortable="'sourceComponentName'">
+                                                    {{x.sourceComponentName}}</td>
+                                                <td title="'Environment'" filter="{ name: 'environment'}" sortable="'environment'">
+                                                    {{x.environment}}</td>
+                                                <td title="'Artifact ID'" filter="{ name: 'artifactID'}" sortable="'artifactID'">
+                                                    {{x.artifactID}}</td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </div>
+                                <!-- /.panel-body -->
+                            </div>
+                            <!-- /.panel -->
+                        </div>
+                        <!-- /.col-lg-12 -->
+                    </div>
+                    <!-- /.row -->
+                </div>
+                <!-- /#page-wrapper -->
+
+            </div>
+            <!-- /#wrapper -->
+        </div>
+
+
+    </body>
+
 
 
 </html>

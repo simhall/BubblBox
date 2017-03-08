@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <base href="/pages/" />
+        <script src="../bower_components/angular/angular.min.js"></script>
+        <link rel="stylesheet"; href="../node_modules/ng-table/bundles/ng-table.min.css">
+        <script src="../node_modules/ng-table/bundles/ng-table.min.js"></script>
+
+        <script src="../angular/myApp.js"></script>
+        <script src="../angular/MenuController.js"></script>
+        <script src="../angular/controller_newartifact.js"></script>
+
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="">
+        <meta name="author" content="">
+
+        <title>BuBBl Box</title>
+
+        <!-- Bootstrap Core CSS -->
+        <link href="../bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+
+        <!-- MetisMenu CSS -->
+        <link href="../bower_components/metisMenu/dist/metisMenu.min.css" rel="stylesheet">
+
+        <!-- Timeline CSS -->
+        <link href="../dist/css/timeline.css" rel="stylesheet">
+
+        <!-- Custom CSS -->
+        <link href="../dist/css/sb-admin-2.css" rel="stylesheet">
+
+        <!-- Morris Charts CSS -->
+        <link href="../bower_components/morrisjs/morris.css" rel="stylesheet">
+
+        <!-- Custom Fonts -->
+        <link href="../bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+        <!-- jQuery -->
+        <script src="../bower_components/jquery/dist/jquery.min.js"></script>
+
+        <!-- Bootstrap Core JavaScript -->
+        <script src="../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+
+        <!-- Metis Menu Plugin JavaScript -->
+        <script src="../bower_components/metisMenu/dist/metisMenu.min.js"></script>
+
+        <!-- Morris Charts JavaScript -->
+        <script src="../bower_components/raphael/raphael-min.js"></script>
+        <script src="../bower_components/morrisjs/morris.min.js"></script>
+        <script src="../angular/BuBBlBoxRestController.js"></script>
+
+        <!-- Custom Theme JavaScript -->
+        <script src="../dist/js/sb-admin-2.js"></script>
+
+    </head>
+
+    <body>
+        <div ng-app="myApp"> 
+            <div id="wrapper">
+
+                <!-- Navigation -->
+                <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand" href="index.html">BuBBl Box Configuration File Management Tool</a>
+                    </div>
+                    <!-- /.navbar-header -->
+
+                    <div class="nav navbar-top-links navbar-right" ng-controller="MenuController">
+                        <ng-include src="'template_topmenu.html'"></ng-include>
+                    </div>
+
+
+                    <div class="navbar-default sidebar" role="navigation" ng-controller="MenuController">
+                        <ng-include src="'template_leftmenu.html'"></ng-include>
+                    </div>
+                    <!-- /.navbar-static-side -->
+                </nav>
+
+                <div id="page-wrapper" ng-controller="NewArtifactController">>
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <h1 class="page-header">New Artifact</h1>
+                        </div>
+                        <!-- /.col-lg-12 -->
+                    </div>
+                    <!-- /.row -->
+                    <div class="row">
+                        <ul class="nav nav-pills nav-stacked col-lg-2" >
+                            <li class="active"><a href="#local" data-toggle="tab">Upload Local File</a></li>
+                            <li><a href="#url" data-toggle="tab">URL</a></li>
+                            <li><a href="#custom" data-toggle="tab">Custom Artifact</a></li>
+                        </ul>
+                        <div class="tab-content clearfix col-lg-6" >
+                            <div class="tab-pane active" id="local">					          <div class="container col-lg-6">
+                                <div class="row">
+                                    <div class="form-group show-border"> 
+                                        <span class="btn btn-default btn-file width-28">
+                                            Browse<input class="" name="file" id="file" type="file">
+                                        </span>
+                                       
+                                    </div>
+                                    <div class="form-group show-border"> 
+                                        <button class="btn btn-primary width-full-control" type="submit" id="upload-file-button" title="Upload file first, then copy markup to clipboard." ng-click="uploadFile()">Upload</button>
+                                    </div>
+                                </div>
+                                
+                                </div>
+
+                            </div>
+                            <div class="tab-pane" id="url">		        		        
+                                <p>Two</p>
+                            </div>	        			
+                            <div class="tab-pane" id="custom">		        		        
+                                <p>On click of this tab hide lorem ipsum and show content</p>
+                            </div>	        			
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="row">
+
+
+                        <form role="form" ng-submit="sendPost()">
+                            <div class="col-lg-6">
+                                <div class="form-group">
+                                    <label>Artifact Name</label>
+                                    <input class="form-control" value="{{artifactName}}" ng-model="artifactData.artifactName">
+                                    <p class="help-block">Example block-level help text here.</p>
+                                </div>
+                                <div class="form-group">
+                                    <label>Last Update</label>
+                                    <input class="form-control" value="{{artifactData['lastUpdate']}}" ng-model="artifactData.lastUpdate">
+                                    <p class="help-block">Example block-level help text here.</p>
+                                </div>
+                                <div class="form-group">
+                                    <label>Artifact ID</label>
+                                    <input class="form-control" value="{{artifactData['artifactID']}}" ng-model="artifactData.artifactID">
+                                    <p class="help-block">Example block-level help text here.</p>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="form-group">
+                                    <label>Documentation URL</label>
+                                    <input class="form-control" value="{{artifactData['documentationURL']}}" ng-model="artifactData.documentationURL">
+                                    <p class="help-block">Example block-level help text here.</p>
+                                </div>
+                                <div class="form-group">
+                                    <label>Source Component Name</label>
+                                    <input class="form-control" value="{{artifactData['sourceComponentName']}}" ng-model="artifactData.sourceComponentName">
+                                    <p class="help-block">Example block-level help text here.</p>
+                                </div>
+                                <div class="form-group">
+                                    <label>Environment</label>
+                                    <input class="form-control" value="{{artifactData['environment']}}" ng-model="artifactData.environment">
+                                    <p class="help-block">Example block-level help text here.</p>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="form-group">
+                                    <label>Text area</label>
+                                    <textarea class="form-control" rows="15" ng-model="artifactData.artifactDataText">{{artifactData['artifactDataText']}}</textarea>
+                                </div>
+                            </div>
+                            <div>
+                                <button type="submit" class="btn btn-default">Update</button>
+                            </div>
+                        </form>
+
+                        <!--<div>
+<span>{{artifactData}}</span>
+</div>-->
+                    </div>
+                </div>
+                <!-- /#page-wrapper -->
+
+            </div>
+            <!-- /#wrapper -->
+            </body>
+
+        </html>
